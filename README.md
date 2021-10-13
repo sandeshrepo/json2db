@@ -9,6 +9,14 @@ Download the repository from github and go to the project folder
 
 psql -U postgres -d json2db
 
+**Setup the (DB)configuration file for database in json2db**
+Edit the file **.env** in project folder and update below if its different
+
+`HOST=localhost
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB=json2db`
+
 
 ## METHOD1
 ### RUNNING STANDALONE
