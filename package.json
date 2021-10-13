@@ -1,0 +1,27 @@
+{
+  "name": "json2db",
+  "version": "1.0.0",
+  "description": "nodejs json2db api with sequelize",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sand3sh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "pg": "^8.5.1",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

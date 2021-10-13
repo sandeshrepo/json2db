@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>CoderDocs - Bootstrap 4 Documentation Template For Software Projects</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head> 
+
+<body>    
+    <header class="header fixed-top">	    
+    </header><!--//header-->
+    
+    
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+		    <h1 class="page-heading single-col-max mx-auto">API</h1>
+		    <div class="page-intro single-col-max mx-auto">Convert any datamodel and save to database without any DML/DDL.</div>
+		    <!--<div class="main-search-box pt-3 d-block mx-auto">
+                 <form class="search-form w-100">
+		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+		        </form>
+             </div>-->
+	    </div>
+    </div><!--//page-header-->
+  
+
+	<section>
+	<br/>
+		    <div class="container">
+	<h3>API USAGE</h3>
+<pre>
+
+
+#INSTALLATION#
+npm init
+npm i express sequelize sequelize-cli pg mysql mysql2 validator body-parser dotenv --save
+
+
+#USAGE OPTION1
+    #ToSend data to database with any json
+    <host:port>/push send body as example below
+    EXAMPLE1: Send data with empid as unique, then the data at that particular record of empid is deleted and below updated
+            {
+        	"tableName": "teachers",
+        	"unique": "empid",
+        	"items": [{
+        			"name": "san",
+                    "empid": "1",
+        			"place": "hsn",
+        			"city":"dubai",
+        			"salary":12677
+        		},
+        		{
+        			"name": "sud",
+                    "empid": "2",
+        			"place": "mys",
+        			"city":"abu",
+        			"salary":9999
+        		}
+        	]
+        }
+
+    EXAMPLE2: Send data with data to be replaced at ["testname","weeknumber"], then the data at that particular record of testname && weeknumber is replaced
+            {
+        	"tableName": "testcases",
+        	"unique": ["testname","weeknumber"]
+        	"items": [{
+        			"testname": "tqc1",
+                    "weeknumber": 10,
+                    "status": "passed"
+        			"system":"codex"
+        		},
+                {
+        			"testname": "tqc2",
+                    "weeknumber": 10,
+                    "status": "passed"
+        			"system":"codex"
+        		}
+        	]
+        }
+#USAGE OPTION 2
+
+Format is <host:port>/record/<name>/<value> 
+or 
+<host:port>/record/name 
+Then send value in body; value in body can be json too
+</div>
+</pre>
+
+	</section>
+    <section class="cta-section text-center py-5 theme-bg-dark position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+		    <h3 class="mb-2 text-white mb-3">v1.0</h3>
+		    <div class="section-intro text-white mb-3 single-col-max mx-auto"></div>
+	    </div>
+    </section><!--//cta-section-->
+
+               
+    
+    <footer class="footer">
+
+	    <div class="footer-bottom text-center py-5">
+		    
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">(c) 2021
+            
+	        
+	    </div>
+	    
+    </footer>
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+</body>
+</html> 
+

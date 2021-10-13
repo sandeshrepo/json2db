@@ -1,0 +1,91 @@
+
+SELECT TO_DATE('20210801','YYYYMMDD');
+
+
+
+INSERT INTO dig_single_val (application,avail_a,avail_b,errors_a,errors_b,tpm_a,tpm_b,report_date,report_date_str) values ('dsp','99.88','99.99','','','','',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_single_val (application,avail_a,avail_b,errors_a,errors_b,tpm_a,tpm_b,report_date,report_date_str) values ('eshop','99.99','99.99','65','','2093','',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_single_val (application,avail_a,avail_b,errors_a,errors_b,tpm_a,tpm_b,report_date,report_date_str) values ('myAccount','99.99','99.99','5','','1589','',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_single_val (application,avail_a,avail_b,errors_a,errors_b,tpm_a,tpm_b,report_date,report_date_str) values ('du.ae','99.99','99.99','3','','4851','',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_single_val (application,avail_a,avail_b,errors_a,errors_b,tpm_a,tpm_b,report_date,report_date_str) values ('duApp','99.99','99.99','ios: 162.4  Android: 371.6','','4340','',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+
+--DSP
+
+INSERT INTO dig_multi_val (application,page_load_time_name,page_load_time_value,page_load_time_b,report_date,report_date_str) values ('dsp','PREPAID','80','3',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,page_load_time_name,page_load_time_value,page_load_time_b,report_date,report_date_str) values ('dsp','POSTPAID','120','3',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('dsp','PREPAID','180',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('dsp','POSTPAID','280',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+
+INSERT INTO dig_multi_val (application,page_load_time_name,page_load_time_value,page_load_time_b,report_date,report_date_str) values ('eshop','','3.53','3',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('eshop','Home Plans','36.4s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('eshop','Postpaid/Prepaid','34.6s/31.1s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('Devices','Postpaid/Prepaid','30.1s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+
+INSERT INTO dig_multi_val (application,page_load_time_name,page_load_time_value,page_load_time_b,report_date,report_date_str) values ('myAccount','','4.38','3',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('myAccount','MNMI','25.8s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('myAccount','Quick Payment','14.1s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+INSERT INTO dig_multi_val (application,journey_time_name,journey_time_value,report_date,report_date_str) values ('myAccount','Quick Recharges','14.3s',TO_DATE('20210801','YYYYMMDD'),'2021 Jul 01');
+
+
+
+CREATE TABLE dig_single_val (
+id serial PRIMARY KEY,
+report_date date,
+report_date_str varchar(100),
+application varchar(100),
+avail_a varchar(50),
+avail_b varchar(50),
+errors_a varchar(50),
+errors_b varchar(50),
+tpm_a varchar(50),
+tpm_b varchar(50),
+created_at timestamp
+);
+
+
+
+--TEST JSON2DB
+
+            {
+        	"tableName": "dig_single_vals",
+        	"unique": ["report_date_str","application"],
+        	"items": [{
+        			"report_date": "2021-09-08",
+                    "report_date_str": "2021-09-08",
+                    "application": "halo",
+        			"avail_a":"99",
+        			"avail_b": "99",
+        			"errors_a": "halo no err",
+					"errors_b": "no err",
+					"tpm_a": "1234",
+					"tpm_b": "5678"
+        		},
+        		{
+        			"report_date": "2021-09-08",
+                    "report_date_str": "2021-09-08",
+                    "application": "asas",
+        			"avail_a":"99",
+        			"avail_b": "99",
+        			"errors_a": "has err",
+					"errors_b": "has err",
+					"tpm_a": "1234",
+					"tpm_b": "5678"
+        		},
+        		{
+        			"report_date": "2021-09-08",
+                    "report_date_str": "2021-09-08",
+                    "application": "asasaaa",
+        			"avail_a":"99",
+        			"avail_b": "99",
+        			"errors_a": "has err",
+					"errors_b": "has err",
+					"tpm_a": "1234",
+					"tpm_b": "5678"
+        		}
+        	]
+        }
