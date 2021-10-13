@@ -30,6 +30,7 @@ docker run -p 9099:9099 -d json2db
 --as localhost 
 docker run -p 9099:9099 --network=host -d json2db
 
+## USAGE
 
 ### USAGE OPTION1 (CREATE)
     # ToSend data to database with any json
