@@ -23,12 +23,18 @@ You can check if the server is running by invoking url http://localhost:9099
 
 ## METHOD2
 ### RUNNING VIA DOCKER
+
+**Creating image**
 docker build -t json2db .
 
+**Running the container**
 docker run -p 9099:9099 -d json2db
 
 --as localhost 
 docker run -p 9099:9099 --network=host -d json2db
+
+You can check if the server is running by invoking url http://localhost:9099
+
 
 ## USAGE
 
