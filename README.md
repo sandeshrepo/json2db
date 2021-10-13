@@ -4,17 +4,22 @@
 Download the repository from github and go to the project folder
 
 
-## INSTALLATION
-npm install
-
 ### SETUP AND RUN YOUR POSTGRESQL DATABASE
 **Pre-requisites:** Create the database named in **json2db**
 
 psql -U postgres -d json2db
 
+
 ## METHOD1
 ### RUNNING STANDALONE
+
+### INSTALLATION
+npm install
+
 node server.js
+
+You can check if the server is running by invoking url http://localhost:9099
+
 
 ## METHOD2
 ### RUNNING VIA DOCKER
