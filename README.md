@@ -1,6 +1,6 @@
 # SETUP
 Download the repository from github and go to the project folder
-git clone https://github.com/sand3sh/json2db.git
+`git clone https://github.com/sandeshrepo/json2db.git`
 
 ## INSTALLATION
 npm install
