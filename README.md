@@ -13,8 +13,11 @@ psql -U postgres -d json2db
 Edit the file **.env** in project folder and update below if its different
 
 HOST=localhost
+
 DB_USER=postgres
+
 DB_PASSWORD=postgres
+
 DB=json2db
 
 
